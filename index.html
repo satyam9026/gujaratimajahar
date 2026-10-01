@@ -1,0 +1,946 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EXPERT  | Stock Market Learning Community</title>
+
+<meta name="description"
+content="Join  Telegram community for stock market education, price action, technical analysis, options concepts, risk management and trading psychology.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#05080f;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+.main{
+    min-height:100vh;
+    padding:25px 15px 40px;
+
+    background:
+    radial-gradient(circle at top left,#123344 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#07352d 0%,transparent 35%),
+    #05080f;
+}
+
+.container{
+    width:100%;
+    max-width:480px;
+    margin:auto;
+    text-align:center;
+}
+
+/* TOP BADGE */
+
+.badge{
+    display:inline-block;
+    padding:9px 18px;
+    border-radius:50px;
+
+    background:rgba(0,255,190,.08);
+    border:1px solid rgba(0,255,190,.30);
+
+    color:#00ffc3;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+
+    margin-bottom:20px;
+}
+
+/* PROFILE */
+
+.profile{
+    width:105px;
+    height:105px;
+
+    margin:0 auto 18px;
+    padding:4px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #00ffc3,
+        #00aaff,
+        #765cff
+    );
+
+    box-shadow:0 0 35px rgba(0,255,195,.25);
+}
+
+.profile img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* TITLE */
+
+h1{
+    font-size:31px;
+    line-height:1.2;
+    margin-bottom:10px;
+    font-weight:800;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#00ffc3,#55d9ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.subtitle{
+    color:#aab5c5;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+/* MAIN CTA */
+
+.telegram-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+    padding:18px 15px;
+
+    border-radius:14px;
+
+    background:linear-gradient(
+        90deg,
+        #00d99b,
+        #00aef0
+    );
+
+    color:#00130e;
+    text-decoration:none;
+
+    font-size:17px;
+    font-weight:800;
+
+    box-shadow:0 12px 35px rgba(0,220,170,.25);
+
+    transition:.3s;
+}
+
+.telegram-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 16px 40px rgba(0,220,170,.40);
+}
+
+.telegram-icon{
+    font-size:22px;
+    margin-right:8px;
+}
+
+.button-small{
+    display:block;
+    margin-top:7px;
+    font-size:10px;
+    color:#8190a2;
+}
+
+/* PULSE */
+
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 0 rgba(0,255,190,.45);
+    }
+
+    70%{
+        box-shadow:0 0 0 12px rgba(0,255,190,0);
+    }
+
+    100%{
+        box-shadow:0 0 0 0 rgba(0,255,190,0);
+    }
+}
+
+/* SECTION */
+
+.section{
+    margin-top:28px;
+}
+
+.section-title{
+    font-size:22px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.section-title span{
+    color:#00ffc3;
+}
+
+.section-subtitle{
+    color:#8995a6;
+    font-size:12px;
+    line-height:1.6;
+    margin-bottom:18px;
+}
+
+/* EDUCATION CARDS */
+
+.education{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.edu-card{
+    text-align:left;
+
+    padding:16px 12px;
+
+    background:rgba(255,255,255,.045);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:14px;
+
+    transition:.3s;
+}
+
+.edu-card:hover{
+    transform:translateY(-3px);
+
+    border-color:rgba(0,255,195,.35);
+
+    background:rgba(0,255,195,.06);
+}
+
+.edu-icon{
+    font-size:25px;
+    margin-bottom:9px;
+}
+
+.edu-card h3{
+    font-size:13px;
+    margin-bottom:5px;
+}
+
+.edu-card p{
+    color:#8793a4;
+    font-size:10px;
+    line-height:1.55;
+}
+
+/* LEARNING ROADMAP */
+
+.roadmap{
+    margin-top:18px;
+    text-align:left;
+}
+
+.step{
+    position:relative;
+
+    display:flex;
+    gap:12px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.step-number{
+    min-width:32px;
+    height:32px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(0,255,195,.10);
+
+    border:1px solid rgba(0,255,195,.25);
+
+    color:#00ffc3;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.step-content h3{
+    font-size:13px;
+    margin-bottom:4px;
+}
+
+.step-content p{
+    color:#8591a2;
+    font-size:10px;
+    line-height:1.5;
+}
+
+/* FEATURE BOX */
+
+.feature-box{
+    margin-top:25px;
+
+    padding:20px 16px;
+
+    border-radius:17px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(0,255,195,.08),
+        rgba(0,130,255,.06)
+    );
+
+    border:1px solid rgba(0,255,195,.15);
+}
+
+.feature-box h2{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.feature-box p{
+    color:#9ba6b5;
+    font-size:11px;
+    line-height:1.65;
+}
+
+/* SECOND CTA */
+
+.second-cta{
+    margin-top:18px;
+}
+
+/* TRUST */
+
+.trust{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+
+    margin-top:15px;
+
+    color:#778495;
+    font-size:10px;
+}
+
+.trust span{
+    padding:6px 9px;
+
+    background:rgba(255,255,255,.035);
+
+    border-radius:20px;
+}
+
+/* DISCLAIMER */
+
+.disclaimer{
+    margin-top:25px;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:rgba(255,193,7,.045);
+
+    border:1px solid rgba(255,193,7,.10);
+
+    color:#8994a4;
+
+    font-size:10px;
+    line-height:1.65;
+}
+
+.disclaimer strong{
+    color:#c2cbd7;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:18px;
+
+    color:#566171;
+
+    font-size:9px;
+    line-height:1.6;
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .main{
+        padding:20px 12px 35px;
+    }
+
+    h1{
+        font-size:27px;
+    }
+
+    .profile{
+        width:95px;
+        height:95px;
+    }
+
+    .education{
+        gap:8px;
+    }
+
+    .edu-card{
+        padding:14px 10px;
+    }
+
+    .edu-card h3{
+        font-size:12px;
+    }
+
+    .telegram-btn{
+        font-size:16px;
+        padding:17px 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="main">
+
+<div class="container">
+
+    <!-- BADGE -->
+
+    <div class="badge">
+        📈 STOCK MARKET EDUCATION COMMUNITY
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <div class="profile">
+
+        <img
+        src="image.png"
+        alt="CA NITIN MURARKA">
+
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h1>
+        Learn The
+        <span class="gradient">
+            GUJARATI TRADER
+        </span>
+    </h1>
+
+    <div class="subtitle">
+
+        Educational content focused on market concepts,
+        technical analysis, price action, options concepts,
+        risk management and trading psychology.
+
+    </div>
+
+
+    <!-- FIRST CTA -->
+
+    <a
+    href="https://t.me/+AU6RETMm0ItlNGNl"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="telegram-btn pulse">
+
+        <span class="telegram-icon">✈️</span>
+
+        JOIN TELEGRAM COMMUNITY
+
+    </a>
+
+    <span class="button-small">
+        Free Educational Access • Tap To Join
+    </span>
+
+
+    <!-- EDUCATION SECTION -->
+
+    <div class="section">
+
+        <div class="section-title">
+            📚 What You Can <span>Learn</span>
+        </div>
+
+        <div class="section-subtitle">
+
+            Build your understanding of the stock market
+            step-by-step with educational resources.
+
+        </div>
+
+
+        <div class="education">
+
+
+            <!-- CARD 1 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Stock Market Basics
+                </h3>
+
+                <p>
+                    Learn basic market terminology,
+                    market structure and how the
+                    stock market works.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    📈
+                </div>
+
+                <h3>
+                    NIFTY & BANKNIFTY
+                </h3>
+
+                <p>
+                    Understand index movements,
+                    charts and important market
+                    concepts.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    🕯️
+                </div>
+
+                <h3>
+                    Candlestick Concepts
+                </h3>
+
+                <p>
+                    Understand common candle formations
+                    and how price behaviour can be studied.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Price Action
+                </h3>
+
+                <p>
+                    Learn how traders study price,
+                    trends, support and resistance.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 5 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Technical Analysis
+                </h3>
+
+                <p>
+                    Explore charts, indicators,
+                    trends and technical concepts.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 6 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    📐
+                </div>
+
+                <h3>
+                    Support & Resistance
+                </h3>
+
+                <p>
+                    Understand key price zones
+                    used in technical analysis.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 7 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    💹
+                </div>
+
+                <h3>
+                    Options Concepts
+                </h3>
+
+                <p>
+                    Learn basic concepts related to
+                    calls, puts, premiums and options.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 8 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Risk Management
+                </h3>
+
+                <p>
+                    Learn why position sizing,
+                    stop-loss planning and risk control
+                    matter.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 9 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Trading Psychology
+                </h3>
+
+                <p>
+                    Understand discipline, emotions,
+                    patience and decision-making.
+                </p>
+
+            </div>
+
+
+            <!-- CARD 10 -->
+
+            <div class="edu-card">
+
+                <div class="edu-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Beginner To Advanced
+                </h3>
+
+                <p>
+                    Follow structured learning topics
+                    and gradually improve your market
+                    knowledge.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LEARNING ROADMAP -->
+
+    <div class="section">
+
+        <div class="section-title">
+            🛣️ Learning <span>Roadmap</span>
+        </div>
+
+        <div class="section-subtitle">
+            Start with fundamentals and gradually
+            explore advanced market concepts.
+        </div>
+
+
+        <div class="roadmap">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Market Fundamentals
+                    </h3>
+
+                    <p>
+                        Understand stocks, indices,
+                        charts and basic terminology.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Chart Reading
+                    </h3>
+
+                    <p>
+                        Learn candlesticks, trends,
+                        support and resistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Price Action
+                    </h3>
+
+                    <p>
+                        Study market behaviour and
+                        price-action based concepts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Options Education
+                    </h3>
+
+                    <p>
+                        Understand basic options
+                        terminology and concepts.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    05
+                </div>
+
+                <div class="step-content">
+
+                    <h3>
+                        Risk & Psychology
+                    </h3>
+
+                    <p>
+                        Learn disciplined risk management
+                        and trading psychology.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEATURE -->
+
+    <div class="feature-box">
+
+        <h2>
+            🎓 Learn Before You Trade
+        </h2>
+
+        <p>
+
+            The objective is to help learners understand
+            market concepts, develop chart-reading skills,
+            learn risk-management principles and build
+            disciplined decision-making habits.
+
+        </p>
+
+    </div>
+
+
+    <!-- SECOND CTA -->
+
+    <div class="second-cta">
+
+        <a
+        href="https://t.me/+nujsRd7beWcwYTRl"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="telegram-btn pulse">
+
+            ✈️ JOIN FREE TELEGRAM NOW
+
+        </a>
+
+        <span class="button-small">
+            Access Educational Market Content
+        </span>
+
+    </div>
+
+
+    <!-- TRUST -->
+
+    <div class="trust">
+
+        <span>✓ Educational Content</span>
+
+        <span>✓ Beginner Friendly</span>
+
+        <span>✓ Free Access</span>
+
+        <span>✓ Easy Join</span>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="disclaimer">
+
+        ⚠️ <strong>Educational Disclaimer:</strong><br>
+
+        This landing page and Telegram community are
+        intended for educational and informational purposes
+        only. The content should not be considered
+        investment advice, financial advice or a guarantee
+        of profit.
+
+        <br><br>
+
+        Trading and investing involve risk. Please conduct
+        your own research and make financial decisions
+        according to your own circumstances and risk tolerance.
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        © 2026 CA NITIN MURARKA
+
+        <br>
+
+        For Educational Purposes Only.
+        Trading & Investing Involve Risk.
+
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
